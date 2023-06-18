@@ -37,7 +37,7 @@
         <a class="navigation__logo" href="#" aria-label="Blogr homepage.">
           <img src="./images/logo.svg" alt="" aria-hidden="true" />
         </a>
-        <nav class="navigation__nav">
+        <nav class="navigation__nav close">
           <ul class="nav__links">
             <li>
               <button
@@ -93,7 +93,7 @@
         <button
           class="navigation__mobile-menu"
           aria-label="Menu."
-          aria-expanded="true"
+          aria-expanded="false"
         ></button>
       </div>
       <div class="header__intro">
@@ -114,12 +114,13 @@
       <section class="design">
         <h2>Designed for the future</h2>
         <div class="design__info">
-          <picture class="design__illustration">
+          <picture>
             <source
               media="(min-width:768px)"
               srcset="./images/illustration-editor-desktop.svg"
             />
             <img
+              class="design__illustration"
               src="./images/illustration-editor-mobile.svg"
               alt=""
               aria-hidden="true"

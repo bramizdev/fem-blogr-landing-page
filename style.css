@@ -60,7 +60,7 @@
   4. Improve text rendering
 */
 body {
-  line-height: 1.5;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -307,4 +307,47 @@ body {
 .btn[data-btn='learn'] {
   border-color: 1px solid var(--clr-neutral-100);
   color: var(--clr-neutral-100);
+}
+
+/* ----- Design ----- */
+.design {
+  margin-top: 6.3rem;
+}
+
+.design h2 {
+  color: var(--clr-primary-700);
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+.design__illustration {
+  width: 100%;
+}
+
+.design__info {
+  display: grid;
+}
+
+.design__articles {
+  margin-top: 0.25rem;
+  padding: 24px;
+}
+
+.design__article {
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+.design__article h3 {
+  color: var(--clr-primary-700);
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.design__article p {
+  text-align: center;
+  color: var(--clr-neutral-800);
 }
