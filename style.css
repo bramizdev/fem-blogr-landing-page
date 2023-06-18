@@ -312,6 +312,7 @@ body {
 /* ----- Design ----- */
 .design {
   margin-top: 6.3rem;
+  margin-bottom: 14.5rem;
 }
 
 .design h2 {
@@ -350,4 +351,35 @@ body {
 .design__article p {
   text-align: center;
   color: var(--clr-neutral-800);
+}
+
+/* ----- Infrastructure ----- */
+.infrastructure {
+  background-image: url('./images/bg-pattern-circles.svg'),
+    var(--clr-gradient-900);
+  border-top-right-radius: 6rem;
+  border-bottom-left-radius: 6rem;
+  background-size: 160%;
+  background-repeat: no-repeat;
+  background-position: 50% -1000%;
+  position: relative;
+  padding-top: 14rem;
+  padding-bottom: 7.25rem;
+  color: var(--clr-neutral-200);
+  text-align: center;
+}
+
+.infrastructure__illustration {
+  position: absolute;
+  top: -11.75rem;
+}
+
+.infrastructure__info {
+  padding: 0 2rem;
+}
+
+.infrastructure__info h2 {
+  font-size: 2.25rem;
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
 }
