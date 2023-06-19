@@ -129,6 +129,9 @@ ul {
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
   cursor: pointer;
+  transition-property: color, background-color, border;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
 }
 /* ----- General styling ----- */
 body {
@@ -295,7 +298,8 @@ body {
 .intro__btn-container {
   margin-top: 1.75rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .btn[data-btn='start'] {
@@ -304,9 +308,20 @@ body {
   color: var(--clr-primary-500);
 }
 
+.btn[data-btn='start']:is(:hover, :focus-visible) {
+  background-color: var(--clr-primary-400);
+  border: 1px solid var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+}
+
 .btn[data-btn='learn'] {
   border-color: 1px solid var(--clr-neutral-100);
   color: var(--clr-neutral-100);
+}
+
+.btn[data-btn='learn']:is(:hover, :focus-visible) {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-500);
 }
 
 /* ----- Design ----- */
@@ -328,6 +343,7 @@ body {
 
 .design__info {
   display: grid;
+  gap: 1.25rem;
 }
 
 .design__articles {
@@ -337,7 +353,6 @@ body {
 
 .design__article {
   padding: 1rem;
-  margin-top: 0.5rem;
 }
 
 .design__article h3 {
@@ -357,21 +372,24 @@ body {
 .infrastructure {
   background-image: url('./images/bg-pattern-circles.svg'),
     var(--clr-gradient-900);
-  border-top-right-radius: 6rem;
-  border-bottom-left-radius: 6rem;
-  background-size: 160%;
   background-repeat: no-repeat;
-  background-position: 50% -1000%;
+  background-size: auto;
+  background-position: center bottom;
+  background-attachment: local;
   position: relative;
   padding-top: 14rem;
   padding-bottom: 7.25rem;
   color: var(--clr-neutral-200);
   text-align: center;
+  border-top-right-radius: 6rem;
+  border-bottom-left-radius: 6rem;
+  margin-bottom: 5.5rem;
 }
 
 .infrastructure__illustration {
   position: absolute;
   top: -11.75rem;
+  width: 375px;
 }
 
 .infrastructure__info {
@@ -382,4 +400,95 @@ body {
   font-size: 2.25rem;
   line-height: 1.35;
   margin-bottom: 1.25rem;
+}
+
+/* ----- Features ----- */
+.features {
+  margin-bottom: 3.5rem;
+}
+
+.features__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.features__articles {
+  display: grid;
+  padding: 24px;
+  gap: 0.75rem;
+}
+
+.features__article {
+  padding: 1rem;
+}
+
+.features__article h3 {
+  color: var(--clr-primary-700);
+  font-size: 1.75rem;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.features__article p {
+  text-align: center;
+  color: var(--clr-neutral-800);
+}
+
+/* ----- Footer ----- */
+.footer {
+  background-color: var(--clr-neutral-900);
+  padding: 2rem;
+  padding-top: 4.65rem;
+  border-top-right-radius: 6rem;
+}
+
+.footer__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  font-family: var(--ff-accent);
+  font-size: 18px;
+}
+
+.footer__navigation > li:first-child {
+  margin-bottom: 2.5rem;
+}
+
+/* Select all footer links */
+.footer__navigation > li > ul a {
+  text-decoration: none;
+  color: var(--clr-neutral-300);
+  line-height: 1.7;
+  transition: text-decoration 0.2s ease;
+}
+/* Select all footer links hover and focus-visible*/
+.footer__navigation > li > ul a:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
+.footer__navigation h4 {
+  color: var(--clr-neutral-100);
+  font-weight: var(--ff-400);
+  margin-bottom: 1.5rem;
+}
+
+/* ----- Attribution ----- */
+.footer__attribution {
+  text-align: center;
+  margin-top: 4rem;
+  color: var(--clr-neutral-300);
+}
+
+.footer__attribution a {
+  text-decoration: none;
+  color: var(--clr-primary-500);
+  transition: color 0.2s ease;
+}
+
+.footer__attribution a:is(:hover, :focus-visible) {
+  color: var(--clr-primary-400);
 }
