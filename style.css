@@ -217,10 +217,11 @@ body {
   height: 8px;
   width: 10px;
   background-image: url('/images/icon-arrow-dark.svg');
+  transition: transform 0.2s ease;
 }
 
 .nav__btn[aria-expanded='true']::after {
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
 }
 
 .nav__short-list.close {
