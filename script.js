@@ -22,6 +22,15 @@ const toggleMobileOptionList = (element) => {
   const parentElement = element.closest('.nav__links');
   const list = parentElement.querySelector(`[data-list="${option}"]`);
 
+  //Close all open tabs
+  parentElement.querySelectorAll('.nav__short-list').forEach((element) => {
+    element.classList.add('close');
+    element
+      .closest('li')
+      .querySelector('.nav__btn')
+      .setAttribute('aria-expanded', 'false');
+  });
+
   if (isExpanded === 'false') {
     list.classList.remove('close');
     element.setAttribute('aria-expanded', 'true');

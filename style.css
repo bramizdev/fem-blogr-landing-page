@@ -31,11 +31,11 @@
   --ff-base: 'Overpass', sans-serif;
   --ff-accent: 'Ubuntu', sans-serif;
 
-  --ff-300: 300;
-  --ff-400: 400;
-  --ff-500: 500;
-  --ff-600: 600;
-  --ff-700: 700;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
 }
 
 /* ----- CSS Reset ----- */
@@ -146,6 +146,13 @@ body {
   border-bottom-left-radius: 6rem;
 }
 
+@media (min-width: 48rem) {
+  .header {
+    background-image: url('./images/bg-pattern-intro-desktop.svg'),
+      var(--clr-gradient-500-90);
+    background-position: 25% 50%;
+  }
+}
 /* ----- Navigation ----- */
 .header__navigation {
   display: flex;
@@ -157,7 +164,7 @@ body {
 }
 
 .navigation__logo img {
-  width: 82px;
+  width: 5.125rem;
 }
 
 .navigation__mobile-menu {
@@ -193,9 +200,13 @@ body {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
+.nav__links {
+  padding-bottom: 1.5rem;
+}
+
 .nav__btn {
   all: unset;
-  font-weight: var(--ff-600);
+  font-weight: var(--fw-600);
   color: var(--clr-neutral-900);
   font-size: 18px;
   text-align: center;
@@ -206,10 +217,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-}
-
-.nav__links {
-  padding-bottom: 1.5rem;
 }
 
 .nav__btn::after {
@@ -240,7 +247,7 @@ body {
   padding: 0.5rem;
   color: var(--clr-neutral-800);
   text-decoration: none;
-  font-weight: var(--ff-600);
+  font-weight: var(--fw-600);
 }
 
 .nav__user-links {
@@ -254,9 +261,10 @@ body {
   padding-bottom: 1rem;
 }
 
-.nav__user-links .btn {
-  font-size: 18px;
-  font-weight: var(--ff-500);
+.user__login,
+.user__signup {
+  font-size: 1.125rem;
+  font-weight: var(--fw-500);
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -270,6 +278,127 @@ body {
   background-image: var(--clr-gradient-500-90);
 }
 
+@media (min-width: 48rem) {
+  .header__navigation {
+    padding: 1.5rem;
+    padding-top: 3.5rem;
+    position: unset;
+    gap: 4rem;
+  }
+
+  .navigation__logo img {
+    width: auto;
+  }
+
+  .navigation__mobile-menu {
+    display: none;
+  }
+
+  .navigation__nav.close {
+    display: flex;
+  }
+
+  .navigation__nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: unset;
+    position: unset;
+    background-color: transparent;
+    inset: unset;
+    padding: unset;
+    border-radius: unset;
+    box-shadow: unset;
+  }
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .nav__links > li {
+    position: relative;
+  }
+
+  .nav__btn {
+    font-weight: var(--fw-600);
+    color: var(--clr-neutral-100);
+    font-size: 17px;
+    padding: unset;
+  }
+
+  .nav__btn::after {
+    background-image: url('./images/icon-arrow-light.svg');
+  }
+
+  .nav__btn:is(:hover, :focus-visible) {
+    text-decoration: underline;
+  }
+
+  .nav__short-list {
+    width: 168px;
+    background-color: var(--clr-neutral-100);
+    position: absolute;
+    left: -1.5rem;
+    font-size: 15px;
+    text-align: left;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+
+  .nav__short-list li a {
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-500);
+    transition: font-weight 0.2s ease;
+  }
+
+  .nav__short-list li a:is(:hover, :focus-visible) {
+    font-weight: var(--fw-700);
+  }
+
+  .nav__user-links {
+    flex-direction: row;
+    border-top: unset;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: unset;
+  }
+
+  .user__signup,
+  .user__login {
+    font-size: 17px;
+    font-weight: var(--fw-500);
+  }
+
+  .user__login {
+    color: var(--clr-neutral-100);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .user__login:is(:hover, :focus-visible) {
+    text-decoration: underline;
+  }
+
+  .user__signup {
+    color: var(--clr-primary-500);
+    background: var(--clr-neutral-100);
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+    transition-property: background-color, color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+  }
+
+  .user__signup:is(:hover, :focus-visible) {
+    background: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
+  }
+}
 /* ----- Intro ----- */
 .header__intro {
   height: 30.5rem;
@@ -473,7 +602,7 @@ body {
 
 .footer__navigation h4 {
   color: var(--clr-neutral-100);
-  font-weight: var(--ff-400);
+  font-weight: var(--fw-400);
   margin-bottom: 1.5rem;
 }
 
